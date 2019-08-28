@@ -34,18 +34,18 @@ export class RecipesService {
 
   getRecipe(recipeId: string)
 {
-  var recipe = [...this.recipes]
-  var find = recipe.find(recipe => recipe.id == recipeId);
-
-  console.log(find);
+  return {
+    ...this.recipes.find(recipe => {
+      return recipe.id === recipeId
+    })
+  }
 }
 
 deleteRecipe(recipeId: string){
 
-  var newa = this.recipes.filter(function(a){
-    return a.id != recipeId
+  this.recipes= this.recipes.filter(recipe => {
+    return recipe.id !== recipeId;
   })
-  this.recipes = newa;
 
 }
 

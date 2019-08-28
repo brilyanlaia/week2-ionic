@@ -29,4 +29,8 @@ getAll(){
    this.recipesService.deleteRecipe(id);
   this.getAll();
  }
+
+ ionViewWillEnter(){
+   this.getAll();
+ }
 }
